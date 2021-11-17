@@ -5,19 +5,18 @@
     <div class="row justify-content-center">
         <div class="col-md-12">
             <div class="card">
-                <div class="card-header">Moddifica la categoria {{$category["name"]}}</div>
+                <div class="card-header">Aggiungi una categoria</div>
                 <div class="card-body">
-                    <form action="{{route("admin.categories.update", $category["id"] )}}" method="POST">
+                    <form action="{{route("admin.categories.store")}}" method="POST">
                         @csrf
-                        @method("PUT")
                         <div class="form-group">
                             <label for="name">Nome</label>
-                            <input type="text" class="form-control @error('name') is-invalid @enderror" name="name" id="name" placeholder="Inserisci la categoria" value="{{old("name") ?? $category["name"]}}">
+                            <input type="text" class="form-control @error('name') is-invalid @enderror" name="name" id="name" placeholder="Inserisci la categoria">
                             @error('name')
                                 <div class="alert alert-danger">{{ $message }}</div>
                             @enderror
                         </div>
-                        <button type="submit" class="btn btn-primary">Modifica</button>
+                        <button type="submit" class="btn btn-primary">Crea</button>
                     </form>
                 </div>
             </div>
