@@ -8,6 +8,7 @@
                 <div class="card-header">{{ __('Dashboard') }}</div>
                 <div class="card-body">
                     <h1>{{$post["title"]}}</h1>
+                    <h3>Categoria: {{$post["category"]["name"] ?? ""}}</h3>
                     <p>{{$post["content"]}}</p>
                 </div>
             </div>
