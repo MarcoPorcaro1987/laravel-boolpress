@@ -18,6 +18,7 @@ use Illuminate\Support\Facades\Route;
 Route::get("/", "PageController@index");
 Route::get("blog", "PostController@index")->name("blog.index");
 Route::get("blog/{slug}", "PostController@show")->name("blog.show");
+Route::get("/api-posts", "PageController@apiPosts")->name("posts.api");
 
 // Rotte Autenticazione
 
@@ -31,5 +32,6 @@ Route::middleware("auth")->namespace("Admin")->name("admin.")->prefix("admin")->
         Route::resource("posts", "PostController");
         Route::resource("categories", "CategoryController");
         Route::resource("tags", "TagController");
+
     }
 );
